@@ -21,22 +21,19 @@ interface OMDbResponse {
 
 const fetchMoviesPage = async ({
   query,
-  pageParam = 0, // Начнем с 0 для удобства расчетов
+  pageParam = 0,
 }: {
   query: string;
   pageParam: number;
 }): Promise<OMDbResponse> => {
   let searchTerm: string;
   let page: number;
-
   if (query.trim() !== "") {
-    // Если пользователь ищет сам — обычная пагинация
     searchTerm = query.trim();
     page = pageParam + 1;
   } else {
     const startYear = 2026;
     const currentYear = startYear - pageParam;
-
     searchTerm = currentYear.toString();
     page = 1;
   }
