@@ -154,7 +154,6 @@ export default function MovieCatalog() {
                       />
 
                       <View style={styles.modalContent}>
-                        {/* Контейнер для заголовка и сердечка */}
                         <View
                           style={{
                             flexDirection: "row",
